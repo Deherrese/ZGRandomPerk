@@ -5,7 +5,7 @@ const DB = {
             {nameEN:"Open-handed", nameES:"A mano descubierta", img:"Open-handed.png", personaje: "Ace Visconti"},
             {nameEN:"Left Behind", nameES:"Abandonado a tu suerte", img:"Left Behind.png", personaje: "Bill Overbeck"},
             {nameEN:"Adrenaline", nameES:"Adrenalina", img:"adrenaline.png", personaje: "Meg Thomas"},
-            {nameEN:"Lithe", nameES:"Agilidad", img:"Lithe.png" , personaje: "Feng min"},
+            {nameEN:"Lithe", nameES:"Agilidad", img:"Lithe.png", personaje: "Feng min"},
             {nameEN:"Alert", nameES:"Alerta", img:"Alert.png", personaje: "Feng Min"},
             {nameEN:"Boil Over", nameES:"Arrebato", img:"Boil Over.png" , personaje: "Kate Denson"},
             {nameEN:"Ace in the Hole", nameES:"As en la manga", img:"Ace in the Hole.png", personaje: "Ace Visconti"},
