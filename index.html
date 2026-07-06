@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ZG Random Perk</title>
+    <!-- Aquí conectamos el CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <!-- Aquí va tu HTML (todo el contenido de las vistas) -->
+    <div id="main-container">
+       <div class="container" id="main-container">
+    
+    <!-- Título de la página -->
+    <h1 style="text-align: center; color: var(--accent-color); margin-top: 0; font-size: 28px; text-transform: uppercase; letter-spacing: 2px;">
+        ZG Random Perk
+    </h1>
+
+    <!-- BADGE GLOBAL DE USUARIO -->
+    <div id="global-user-badge">
+    ...
+
+        <img id="user-icon" class="user-avatar" src="" onerror="this.src='https://placehold.co/40x40/333/fff?text=?'">
+
+        <div><strong id="user-display"></strong><br><span style="color:#666; font-size: 10px;">Perfil Activo</span></div>
+
+    </div>
+
+
+
+    <!-- VISTA 1: LOGIN -->
+
+    <div id="login-view" class="view active">
+
+        <div class="menu-box">
+
+            <img src="img/logo.png" class="login-logo" alt="Logo" onerror="this.style.display='none'">
+
+            <input type="text" id="username" placeholder="Nombre de usuario">
+
+           
+
+            <label style="display:block; margin-top:15px; font-size:13px; color:#aaa;">Elige tu categoría:</label>
+<select id="user-category-select" onchange="cargarAvatares()">
+    <option value="surv">Supervivientes</option>
+    <option value="killer">Asesinos</option>
+</select>
+
+<label style="display:block; margin-top:10px; font-size:13px; color:#aaa;">Avatar:</label>
+<div class="custom-dropdown" id="dropdown-container">
+    <div class="dropdown-header" id="dropdown-header" onclick="toggleDropdown()">Selecciona un avatar...</div>
+    <div class="dropdown-list" id="dropdown-list"></div>
+</div>
+
+<input type="hidden" id="selected-avatar-value">
+
+            <div style="margin: 15px auto;">
+
+                <img id="avatar-preview" src="img/avatares/dwight_avatar.png" onerror="this.src='https://placehold.co/70x70/333/fff?text=👤'" style="width:70px; height:70px; border-radius:50%; border:2px solid #555; object-fit: cover;">
+
+            </div>
+
+            <button class="dbd-btn" onclick="login()">Continuar</button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- VISTA 2: SELECCIÓN DE ROL -->
+
+    <div id="role-view" class="view">
+
+        <h1 style="text-align:center;">Selecciona un Rol para Jugar</h1>
+
+        <div class="role-container">
+
+            <div class="role-box" onclick="entrarConRol('Superviviente')">
+
+                <img src="img/surv.png" class="role-img" onerror="this.src='https://placehold.co/80x80/222/fff?text=SURV'">
+
+                <p>Superviviente</p>
+
+            </div>
+
+            <div class="role-box" onclick="entrarConRol('Asesino')">
+
+                <img src="img/killer.png" class="role-img" onerror="this.src='https://placehold.co/80x80/222/fff?text=KILLER'">
+
+                <p>Asesino</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- VISTA 3: APLICACIÓN PRINCIPAL -->
+
+    <div id="app-view" class="view">
+
+        <h1 id="titulo-app" style="margin-bottom: 5px;">Generador de Build</h1>
+
+       
+
+        <div class="controls-bar">
+
+            <button class="dbd-btn" onclick="togglePanel('blacklist-panel')">⚙️ Blacklist</button>
+
+            <button class="dbd-btn" onclick="verHistorialCompleto()">📜 Ver Historial y Rachas</button>
+
+            <button class="dbd-btn" style="border-color:#555;" onclick="regresarARol()">🔄 Cambiar Rol</button>
+
+        </div>
+
+       
+
+        <div id="blacklist-panel">
+
+    <div class="panel-title">Habilitar / Deshabilitar Perks</div>
+
+    <!-- Agregamos este contenedor para el buscador -->
+
+    <div id="search-box-container"></div>
+
+    <!-- Este es el contenedor donde irá la lista -->
+
+    <div id="blacklist-grid" class="blacklist-grid-compact"></div>
+
+</div>
+
+
+
+        <div class="workspace">
+
+            <!-- OVERLAY DE PERSONAJES -->
+
+            <div id="char-overlay" class="char-overlay-menu">
+
+                <div class="char-overlay-title">Selecciona Personaje</div>
+
+                <div id="char-overlay-options"></div>
+
+            </div>
+
+
+
+            <!-- COLUMNA IZQUIERDA -->
+
+            <div class="left-side">
+
+                <div id="btn-generar-click" class="btn-generar disabled" onclick="generar()">
+
+                    <span>Cargando...</span>
+
+                </div>
+
+
+
+                <div id="match-result-zone">
+
+                    <div id="result-question" style="font-size:14px; font-weight:bold; margin-bottom:5px;">¿Cómo terminó la partida?</div>
+
+                    <div class="result-btns">
+
+                        <button id="btn-result-win" class="btn-win" onclick="registrarResultado(true)">
+
+                            <img id="icon-win" class="btn-icon" src="" onerror="this.style.display='none'">
+
+                            <span id="text-win">-</span>
+
+                        </button>
+
+                        <button id="btn-result-loss" class="btn-loss" onclick="registrarResultado(false)">
+
+                            <img id="icon-loss" class="btn-icon" src="" onerror="this.style.display='none'">
+
+                            <span id="text-loss">-</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="perks-grid" id="grid">
+
+                    <div class="perk-wrapper"><div class="slot-container" id="container-0"><div class="perk-slot" id="strip-0"></div></div><div class="perk-name" id="name-0">-</div></div>
+
+                    <div class="perk-wrapper"><div class="slot-container" id="container-1"><div class="perk-slot" id="strip-1"></div></div><div class="perk-name" id="name-1">-</div></div>
+
+                    <div class="perk-wrapper"><div class="slot-container" id="container-2"><div class="perk-slot" id="strip-2"></div></div><div class="perk-name" id="name-2">-</div></div>
+
+                    <div class="perk-wrapper"><div class="slot-container" id="container-3"><div class="perk-slot" id="strip-3"></div></div><div class="perk-name" id="name-3">-</div></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COLUMNA DERECHA -->
+
+            <div class="right-side">
+
+                <div class="selected-char-title">Personaje Activo</div>
+
+                <img id="display-char-img" class="selected-char-img" src="" onerror="this.src='https://placehold.co/110x110/080808/fff?text=👤'">
+
+                <div id="display-char-name" class="selected-char-name">-</div>
+
+                <div id="display-char-role" class="selected-char-role">-</div>
+
+                <button class="dbd-btn" style="font-size:11px; padding: 8px 12px; margin:0; width:100%; border-color:var(--accent-color);" onclick="toggleCharOverlay()">Cambiar</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- VISTA 4: HISTORIAL -->
+
+    <div id="history-view" class="view">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+
+            <h1 style="margin: 0;">Historial de Partidas</h1>
+
+            <button class="dbd-btn" onclick="showView('app-view')" style="border-color: #666;">⬅️ Volver</button>
+
+        </div>
+
+
+
+        <div class="streaks-box">
+
+            <div class="streak-stat">Racha Actual<span id="stat-streak">0</span></div>
+
+            <div class="streak-stat">Máxima Racha<span id="stat-max-streak">0</span></div>
+
+            <div class="streak-stat">Totales (W/L)<span id="stat-totals">0 / 0</span></div>
+
+        </div>
+
+
+
+        <div class="panel-title">
+
+            <span>Registro de Builds Anteriores</span>
+
+            <button onclick="borrarHistorial()" style="background:none; border:none; color:#df2323; cursor:pointer; font-size:11px; font-weight: bold;">⚠️ Borrar Datos</button>
+
+        </div>
+
+
+
+        <div class="history-list" id="history-items"></div>
+
+    </div>
+
+</div>
+   
+
+    <!-- Aquí conectamos el JS al final para que la página cargue más rápido -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+        
