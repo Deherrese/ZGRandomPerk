@@ -14,7 +14,7 @@ const DB = {
             {nameEN:"Autodidact", nameES:"Autodidacta", img:"Autodidact.png", personaje: "Adam Francis"},
             {nameEN:"Dance With Me", nameES:"Baila conmigo", img:"Dance With Me.png", personaje: "Kate Denson"},
             {nameEN:"Skate Out", nameES:"Bajo vigilancia", img:"Skate Out.png", personaje: "Detective Tapp"},
-            {nameEN:"Boon Circle of Healing", nameES:"Bendición: Círculo de curación", img:"Boon Circle of Healing.png", personaje" "Mikaela Reid"},
+            {nameEN:"Boon Circle of Healing", nameES:"Bendición: Círculo de curación", img:"Boon Circle of Healing.png", personaje: "Mikaela Reid"},
             {nameEN:"Boon Exponential", nameES:"Bendición: Exponencial", img:"Boon Exponential.png"},
             {nameEN:"Boon Illumination", nameES:"Bendición: Iluminación", img:"Boon Illumination.png", personaje: "Alan Wake"},
             {nameEN:"Boon Shadow Step", nameES:"Bendición: Paso sombrío", img:"Boon Shadow Step.png"},
