@@ -4,20 +4,34 @@ const DB = {
 
             {nameEN:"Open-handed", nameES:"A mano descubierta", img:"Open-handed.png", personaje: "Ace Visconti"},
             {nameEN:"Left Behind", nameES:"Abandonado a tu suerte", img:"Left Behind.png", personaje: "Bill Overbeck"},
+<<<<<<< HEAD
             {nameEN:"Wide Open Throttle", nameES:"Acelerador a Fondo", img:"Wide Open Throttle.png", personaje: "Shane Wiigwaas"},
             {nameEN:"Adrenaline", nameES:"Adrenalina", img:"adrenaline.png", personaje: "Meg Thomas"},
             {nameEN:"Lithe", nameES:"Agilidad", img:"Lithe.png", personaje: "Feng Min"},
             {nameEN:"Alert", nameES:"Alerta", img:"Alert.png", personaje: "feng Min"},
             {nameEN:"Boil Over", nameES:"Arrebato", img:"Boil Over.png", personaje: "Kate Denson"},
+=======
+            {nameEN:"Adrenaline", nameES:"Adrenalina", img:"adrenaline.png", personaje: "Meg Thomas"},
+            {nameEN:"Lithe", nameES:"Agilidad", img:"Lithe.png", personaje: "Feng min"},
+            {nameEN:"Alert", nameES:"Alerta", img:"Alert.png", personaje: "Feng Min"},
+            {nameEN:"Boil Over", nameES:"Arrebato", img:"Boil Over.png" , personaje: "Kate Denson"},
+>>>>>>> e7cac86005ea6e7779df25699fc99dbee3e4c853
             {nameEN:"Ace in the Hole", nameES:"As en la manga", img:"Ace in the Hole.png", personaje: "Ace Visconti"},
             {nameEN:"Self-Preservation", nameES:"Autoconservación", img:"Self-Preservation.png", personaje: "Yun Jin Lee"},
             {nameEN:"Self-Care", nameES:"Autocuración", img:"Self-Care.png", personaje: "Claudette Morel"},
             {nameEN:"Autodidact", nameES:"Autodidacta", img:"Autodidact.png", personaje: "Adam Francis"},
+<<<<<<< HEAD
             {nameEN:"Bada Bada Boom", nameES:"Bada bada bum", img:"Bada Bada Boom.png", personaje: "Dustin Henderson"},
             {nameEN:"Dance With Me", nameES:"Baila conmigo", img:"Dance With Me.png", personaje: "Kate Denson"},
             {nameEN:"Skate Out", nameES:"Bajo vigilancia", img:"Skate Out.png", personaje: "Detective Tapp"},
             {nameEN:"Boon Circle of Healing", nameES:"Bendición: Círculo de curación", img:"Boon Circle of Healing.png", personaje: "Mikaela Reid"},
             {nameEN:"Boon Exponential", nameES:"Bendición: Exponencial", img:"Boon Exponential.png", personaje: "Jonah Vasquez"},
+=======
+            {nameEN:"Dance With Me", nameES:"Baila conmigo", img:"Dance With Me.png", personaje: "Kate Denson"},
+            {nameEN:"Skate Out", nameES:"Bajo vigilancia", img:"Skate Out.png", personaje: "Detective Tapp"},
+            {nameEN:"Boon Circle of Healing", nameES:"Bendición: Círculo de curación", img:"Boon Circle of Healing.png", personaje: "Mikaela Reid"},
+            {nameEN:"Boon Exponential", nameES:"Bendición: Exponencial", img:"Boon Exponential.png"},
+>>>>>>> e7cac86005ea6e7779df25699fc99dbee3e4c853
             {nameEN:"Boon Illumination", nameES:"Bendición: Iluminación", img:"Boon Illumination.png", personaje: "Alan Wake"},
             {nameEN:"Boon Shadow Step", nameES:"Bendición: Paso sombrío", img:"Boon Shadow Step.png", personaje: "Mikaela Reid"},
             {nameEN:"Boon Dark Theory", nameES:"Bendición: Teoría oscura", img:"Boon Dark Theory.png", personaje: "Yoichi Asakawa"},
