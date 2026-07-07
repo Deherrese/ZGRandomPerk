@@ -20,9 +20,54 @@
 
         #global-user-badge { position: absolute; top: 15px; left: 20px; background: #111; padding: 5px 12px; border-radius: 4px; border: 1px solid #333; display: none; align-items: center; gap: 10px; font-size: 13px; z-index: 100; }
 
-        .user-avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #555; object-fit: cover; }
+        #titulo-app {
+    margin-top: 55px !important; /* Ajusta este valor (ej. 80px, 120px) hasta que quede perfecto */
+    margin-bottom: 5px;
+}
 
-       
+        .user-avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #555; object-fit: cover; }
+/* Ajusta el contenedor que envuelve al avatar y al texto */
+.contenedor-usuario {
+    display: flex; /* Esto pone el avatar y el texto uno al lado del otro */
+    align-items: center; /* Esto alinea el texto y el avatar verticalmente al centro */
+    padding: 10px;
+    gap: 15px; /* Esto crea un espacio real entre el avatar y el texto */
+}
+
+/* Ajusta el tamaño de la fuente del nombre */
+#user-display {
+    font-size: 18px; /* Hazlo más grande a tu gusto */
+    display: block; /* Asegura que el texto tenga su propio espacio */
+    margin-bottom: 2px; /* Separa el nombre del texto "Perfil Activo" */
+}
+
+       #avatar-preview {
+    /* --- Tus medidas anteriores --- */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    object-fit: contain;
+    background-color: #222;
+
+    /* --- Correcciones para el centrado --- */
+    display: block; /* Necesario para que funcionen los márgenes */
+    margin-left: auto;  /* Margen izquierdo automático */
+    margin-right: auto; /* Margen derecho automático */
+    /* Opcional: Añade un poco de separación arriba/abajo si lo necesitas */
+    /* margin-top: 10px;  margin-bottom: 10px; */
+}
+
+.avatar-style, .user-avatar {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    border: 2px solid #555 !important;
+    object-fit: contain !important; /* O 'cover' si prefieres que llene todo */
+    background-color: #222 !important;
+    display: block !important;
+    margin: 0 auto !important; /* Centrado automático */
+}
 
         .view { display: none; } .view.active { display: block; }
 
@@ -348,6 +393,20 @@
 
         .perk-name span { display: block; font-size: 11px; color: #ffffff; opacity: 0.85; margin-top: 2px; }
 
+        .perk-name { 
+    font-size: 14px; 
+    margin-top: 12px; 
+    color: #ffffff; 
+    text-align: center; 
+    width: 140px; 
+    min-height: 45px; /* Un poco más alto para evitar saltos si el texto tiene 2 líneas */
+    line-height: 1.2; 
+    font-weight: bold; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
    
 
    
